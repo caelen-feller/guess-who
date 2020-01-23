@@ -5,6 +5,7 @@ const magic = [29, 23, 11, 19, 17];
 
 const datasets = {
   'A': ['attack-on-titan', 'Attack on Titans', 'Anime'],
+  'C': ['cats', 'Kitties', 'Other'],
   'D': ['death-note', 'Death Note', 'Anime'],
   'F': ['fairy-tail', 'Fairy Tail', 'Anime'],
   'H': ['harry-potter', 'Harry Potter', 'Movie'],
