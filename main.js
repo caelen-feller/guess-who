@@ -10,6 +10,7 @@ const datasets = {
   'H': ['harry-potter', 'Harry Potter', 'Movie'],
   'I': ['is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon', 'Is It Wrong to Try to Pick Up Girls in a Dungeon?', 'Anime'],
   'K': ['kyoto-animation', 'Kyoto Animation', 'Anime'],
+  'L': ['lorem-picsum', 'Lorem Picsum', 'Other'],
   'M': ['miyazaki', 'Hayao MIYAZAKI', 'Anime'],
   'N': ['naruto-shippuden', 'Naruto Shippuden', 'Anime'],
   'P': ['pokemon', 'Pokemon', 'Anime'],
@@ -193,10 +194,11 @@ function show_board(items) {
     }
 }
 
+let errors = []
 function show_all() {
   let html = ['<table>'];
   for(let item of data) {
-    html.push('<tr><td>'+item.title+'</td><td><img src="'+item.image+'" style="max-width:300px; max-height:300px" /></td></tr>');
+    html.push('<tr><td>'+item.title+'</td><td><img src="'+item.image+'" style="max-width:300px; max-height:300px" onerror="errors.push(\''+item.title+'\')" /></td></tr>');
   }
   document.body.innerHTML = html.join('');
 }
