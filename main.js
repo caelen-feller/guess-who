@@ -18,6 +18,7 @@ const datasets = {
   '2': ['konosuba-gods-blessing-on-this-wonderful-world', 'KonoSuba - God\'s blessing on this wonderful world!'],
   '3': ['programming', 'Programming Languages'],
   '4': ['flags', 'Flags'],
+  '5': ['people', 'People'],
 };
 
 function random() {
@@ -171,7 +172,7 @@ function show_board(items) {
       button.id = 'cell_'+i;
       button.style.backgroundImage = 'url('+items[i].image+')'
 
-      button.innerHTML = '<h4>'+items[i].title+'</h4><button class="btn btn-sm btn-secondary" onclick="show_window(event, \''+items[i].url+'\')">?</button>';
+      button.innerHTML = '<h4>'+items[i].title+'</h4>' + (items[i].url ? '<button class="btn btn-sm btn-secondary" onclick="show_window(event, \''+items[i].url+'\')">?</button>' : '');
 
       button.onclick = function(event) {
         $(this).toggleClass('opaque');
