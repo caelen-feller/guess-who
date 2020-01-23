@@ -4,21 +4,21 @@ const seed_chars = '123456789QWERTYUIOPASDFGHJKLZXCVBNM';
 const magic = [29, 23, 11, 19, 17];
 
 const datasets = {
-  'A': ['attack-on-titan', 'Attack on Titans'],
-  'D': ['death-note', 'Death Note'],
-  'F': ['fairy-tail', 'Fairy Tail'],
-  'H': ['harry-potter', 'Harry Potter'],
-  'I': ['is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon', 'Is It Wrong to Try to Pick Up Girls in a Dungeon?'],
-  'K': ['kyoto-animation', 'Kyoto Animation'],
-  'M': ['miyazaki', 'Hayao MIYAZAKI'],
-  'N': ['naruto-shippuden', 'Naruto Shippuden'],
-  'P': ['pokemon', 'Pokemon'],
+  'A': ['attack-on-titan', 'Attack on Titans', 'Anime'],
+  'D': ['death-note', 'Death Note', 'Anime'],
+  'F': ['fairy-tail', 'Fairy Tail', 'Anime'],
+  'H': ['harry-potter', 'Harry Potter', 'Movie'],
+  'I': ['is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon', 'Is It Wrong to Try to Pick Up Girls in a Dungeon?', 'Anime'],
+  'K': ['kyoto-animation', 'Kyoto Animation', 'Anime'],
+  'M': ['miyazaki', 'Hayao MIYAZAKI', 'Anime'],
+  'N': ['naruto-shippuden', 'Naruto Shippuden', 'Anime'],
+  'P': ['pokemon', 'Pokemon', 'Anime'],
 
-  '1': ['digimon', 'Digimon'],
-  '2': ['konosuba-gods-blessing-on-this-wonderful-world', 'KonoSuba - God\'s blessing on this wonderful world!'],
-  '3': ['programming', 'Programming Languages'],
-  '4': ['flags', 'Flags'],
-  '5': ['people', 'People'],
+  '1': ['digimon', 'Digimon', 'Anime'],
+  '2': ['konosuba-gods-blessing-on-this-wonderful-world', 'KonoSuba - God\'s blessing on this wonderful world!', 'Anime'],
+  '3': ['programming', 'Programming Languages', 'Other'],
+  '4': ['flags', 'Flags', 'Other'],
+  '5': ['people', 'People', 'Other'],
 };
 
 function random() {
@@ -97,11 +97,22 @@ function update_seed() {
 
 function create_game() {
   let list = document.getElementById('datasets');
-  for(key in datasets) {
-    let option = document.createElement('option');
-    option.value = key;
-    option.innerText = datasets[key][1];
-    list.appendChild(option);
+  let groups = {}
+  for(let key in datasets)
+    groups[datasets[key][2]] = true
+
+  for(let group in groups) {
+    let optgroup = document.createElement('optgroup');
+    optgroup.label = group;
+
+    for(let key in datasets)
+      if(datasets[key][2] == group) {
+        let option = document.createElement('option');
+        option.value = key;
+        option.innerText = datasets[key][1];
+        optgroup.appendChild(option);
+      }
+    list.appendChild(optgroup);
   }
 
   let char = '';
