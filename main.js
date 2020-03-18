@@ -152,6 +152,8 @@ function start_game(created) {
 
   let script = document.createElement('script');
 
+  document.getElementById('dataset_styles').href = 'styles/' + _seed['dataset'] + '.css';
+  
   script.src = 'datasets/' + _seed['dataset'] + '.js';
   script.onload = function() {
     let game = prepare_game(_seed);
