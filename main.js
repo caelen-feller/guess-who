@@ -5,10 +5,11 @@ const magic = [29, 23, 11, 19, 17];
 
 const datasets = {
   'A': ['attack-on-titan', 'Attack on Titans', 'Anime'],
-  'C': ['cats', 'Kitties', 'Other'],
+  // 'C': ['cats', 'Kitties', 'Other'],
   'D': ['death-note', 'Death Note', 'Anime'],
   'F': ['fairy-tail', 'Fairy Tail', 'Anime'],
   'H': ['harry-potter', 'Harry Potter', 'Movie'],
+  'G': ['gwent', 'GWENT: The Witcher Card Game', 'Other'],
   'I': ['is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon', 'Is It Wrong to Try to Pick Up Girls in a Dungeon?', 'Anime'],
   'K': ['kyoto-animation', 'Kyoto Animation', 'Anime'],
   'L': ['lorem-picsum', 'Lorem Picsum', 'Other'],
