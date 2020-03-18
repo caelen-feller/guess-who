@@ -93,6 +93,7 @@ function update_seed() {
 
   // display seed
   $('#game_seed').text(code);
+  $('#game_seed').attr('href', '#'+code);
   local_seed = code;
 
   return code;
@@ -136,7 +137,9 @@ function create_game() {
   $('#create_game').removeClass('d-none');
 }
 
-function join_game() {
+function join_game(code) {
+  if(code)
+    $('#join_seed').val(code);
   $('#initial').toggleClass('d-none');
   $('#join_game').toggleClass('d-none');
 }
@@ -153,7 +156,7 @@ function start_game(created) {
   let script = document.createElement('script');
 
   document.getElementById('dataset_styles').href = 'styles/' + _seed['dataset'] + '.css';
-  
+
   script.src = 'datasets/' + _seed['dataset'] + '.js';
   script.onload = function() {
     let game = prepare_game(_seed);
@@ -205,4 +208,14 @@ function show_all() {
     html.push('<tr><td>'+item.title+'</td><td><img src="'+item.image+'" style="max-width:300px; max-height:300px" onerror="errors.push(\''+item.title+'\')" /></td></tr>');
   }
   document.body.innerHTML = html.join('');
+}
+
+function check_hash() {
+  if(document.location.hash) {
+    let hash = document.location.hash.slice(1);
+    let game = parse_code(hash);
+    console.log(hash, game);
+    if(game)
+      join_game(hash);
+  }
 }

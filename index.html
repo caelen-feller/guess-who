@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="" id="dataset_styles" />
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="check_hash()">
 
 <div id="initial" class="full">
   <div class="container text-center centerize">
@@ -28,7 +28,9 @@
 
     <select class="form-control form-control-lg display-1 mx-auto my-5" id="datasets" onchange="update_seed()" style="font-size: 24pt;"></select>
 
-    <h2 class="my-5 display-4 font-weight-bold" style="font-family:monospace" id="game_seed"></h2>
+    <h2 class="my-5 display-4 font-weight-bold " style="font-family:monospace">
+        <a href="" id="game_seed"></a>
+    </h2>
 
     <button class="btn btn-primary btn-lg btn-block" onclick="start_game(true)">Continue</button>
   </div>
@@ -39,7 +41,7 @@
     <h1 class="display-4">Game seed</h1>
     <p class="lead">Acquire it from the opponent!</p>
 
-    <input id="join_seed" class="form-control mx-auto my-5 text-center" maxlength="6" style="width: 300px" minlength="6"/>
+    <input id="join_seed" class="form-control form-control-lg display-1 mx-auto my-5 text-center " maxlength="6" style="width: 300px" minlength="6"/>
 
     <button class="btn btn-primary btn-lg btn-block" onclick="start_game(false)">Continue</button>
   </div>
