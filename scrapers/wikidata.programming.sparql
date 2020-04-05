@@ -1,0 +1,19 @@
+PREFIX vrank:<http://purl.org/voc/vrank#>
+
+SELECT DISTINCT ?item ?itemLabel ?logo ?pr WHERE {
+  ?item wdt:P31/wdt:P279* wd:Q9143. #wd:Q1114461.
+
+  OPTIONAL {
+    ?item wdt:P154 ?logo.
+  }
+  
+  OPTIONAL {
+    SERVICE <http://dbpedia.org/sparql> {
+      ?item vrank:hasRank/vrank:rankValue ?pr
+    }
+  }
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".
+  }
+} ORDER BY DESC(?pr)

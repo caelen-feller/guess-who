@@ -8,7 +8,7 @@ let data = [
    {
       "url":"http://www.wikidata.org/entity/Q251",
       "title":"Java",
-      "image":"http://commons.wikimedia.org/wiki/Special:FilePath/Logo-java-830x460.jpg",
+      "image":"https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
       "pr":"187.241"
    },
    {
@@ -32,6 +32,7 @@ let data = [
    {
       "url":"http://www.wikidata.org/entity/Q42478",
       "title":"Perl",
+      "image":"http://commons.wikimedia.org/wiki/Special:FilePath/Logo_De_Perl.png",
       "pr":"92.6542"
    },
    {
@@ -93,7 +94,7 @@ let data = [
    {
       "url":"http://www.wikidata.org/entity/Q206904",
       "title":"R",
-      "image":"http://commons.wikimedia.org/wiki/Special:FilePath/R%20logo.svg",
+      "image":"http://commons.wikimedia.org/wiki/Special:FilePath/R_logo.svg",
       "pr":"36.6552"
    },
    {
@@ -191,6 +192,7 @@ let data = [
    {
       "url":"http://www.wikidata.org/entity/Q178817",
       "title":"ASP.NET",
+      "image":"http://commons.wikimedia.org/wiki/Special:FilePath/Asp.net.svg",
       "pr":"18.9334"
    },
    {
@@ -214,6 +216,7 @@ let data = [
    {
       "url":"http://www.wikidata.org/entity/Q163468",
       "title":"Prolog",
+      "image":"https://www.swi-prolog.org/icons/vector/swipl-logo.svg",
       "pr":"18.0664"
    },
    {
