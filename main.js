@@ -7,6 +7,7 @@ const datasets = {
   'A': ['attack-on-titan', 'Attack on Titans', 'Anime'],
   // 'C': ['cats', 'Kitties', 'Other'],
   'D': ['death-note', 'Death Note', 'Anime'],
+  'E': ['emoji', 'Emoji 10.0', 'Other'],
   'F': ['fairy-tail', 'Fairy Tail', 'Anime'],
   'H': ['harry-potter', 'Harry Potter', 'Movie'],
   'G': ['gwent', 'GWENT: The Witcher Card Game', 'Other'],

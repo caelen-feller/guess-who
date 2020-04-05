@@ -1,5 +1,5 @@
 # guess-who #
 
-Play with friends and guess your favorite programming language or from one of many datasets.
+Play with friends and guess your favorite programming language, emoji or from one of many datasets.
 
-![Gameplay screenshot](screenshot.png)
+![Gameplay screenshot](screenshot.jpg)
