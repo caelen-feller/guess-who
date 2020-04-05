@@ -16,6 +16,7 @@ const datasets = {
   'M': ['miyazaki', 'Hayao MIYAZAKI', 'Anime'],
   'N': ['naruto-shippuden', 'Naruto Shippuden', 'Anime'],
   'P': ['pokemon', 'Pokemon', 'Anime'],
+  'S': ['souvenirs', 'Geocaching Souvenirs', 'Other'],
 
   '1': ['digimon', 'Digimon', 'Anime'],
   '2': ['konosuba-gods-blessing-on-this-wonderful-world', 'KonoSuba - God\'s blessing on this wonderful world!', 'Anime'],
