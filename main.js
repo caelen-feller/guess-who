@@ -148,14 +148,15 @@ function start_game(created) {
     $('#join_game').addClass('d-none');
     $('#start_game').removeClass('d-none');
 
-    show_board(game.data);
+    show_board(game.data, game.firstClick);
 
     if(created)
       pid = game.player_a;
     else pid = game.player_b;
 
-    $('#cell_'+pid).removeClass('btn-primary').addClass('btn-warning text-white');
-    document.getElementById('cell_'+pid).onclick=null;
+    //$('#cell_'+pid).removeClass('btn-primary').addClass('btn-warning text-white');
+    //document.getElementById('cell_'+pid).onclick=null;
+    game.firstClick = True;
   }
   document.body.appendChild(script);
 }
@@ -165,7 +166,7 @@ function show_window(event, url) {
   event.stopPropagation();
 }
 
-function show_board(items) {
+function show_board(items, firstClick) {
   for(let y=0;y<3;y++)
     for(let x=0;x<8;x++){
       let i = 8*y+x;
@@ -175,8 +176,14 @@ function show_board(items) {
       button.style.backgroundImage = 'url('+items[i].image+')'
 
       button.innerHTML = '<h4>'+items[i].title+'</h4>' + (items[i].url ? '<button class="btn btn-sm btn-secondary" onclick="show_window(event, \''+items[i].url+'\')">?</button>' : '');
-
+      
       button.onclick = function(event) {
+        if(firstClick){
+            $(this).removeClass('btn-primary').addClass('btn-warning text-white');
+            $(this).onclick=null;
+            firstClick = False;
+        }
+        
         $(this).toggleClass('opaque');
       }
 
