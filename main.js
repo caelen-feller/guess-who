@@ -147,6 +147,7 @@ function start_game(created) {
     $('#create_game').addClass('d-none');
     $('#join_game').addClass('d-none');
     $('#start_game').removeClass('d-none');
+    game.firstClick = true;
 
     show_board(game.data, game.firstClick);
 
@@ -156,7 +157,6 @@ function start_game(created) {
 
     //$('#cell_'+pid).removeClass('btn-primary').addClass('btn-warning text-white');
     //document.getElementById('cell_'+pid).onclick=null;
-    game.firstClick = True;
   }
   document.body.appendChild(script);
 }
@@ -181,7 +181,7 @@ function show_board(items, firstClick) {
         if(firstClick){
             $(this).removeClass('btn-primary').addClass('btn-warning text-white');
             $(this).onclick=null;
-            firstClick = False;
+            firstClick = false;
         }
         
         $(this).toggleClass('opaque');
